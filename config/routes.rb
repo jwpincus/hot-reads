@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'hot_reads#index'
   namespace :api do
     namespace :v1 do
-      resources :reads, only: [:create]
+      resources :reads, only: [:index, :create]
 
     end
   end

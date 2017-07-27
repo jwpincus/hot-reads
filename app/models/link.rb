@@ -9,4 +9,10 @@ class Link < ApplicationRecord
       order('read_count DESC').
       limit(10)
   end
+
+  def self.is_hot?(url)
+    link = find_by(URL: url)
+    return 'Top Link!' if hot.first == link
+    return 'Hot Link!' if hot.includes(link)
+  end
 end
