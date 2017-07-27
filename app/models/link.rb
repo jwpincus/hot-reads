@@ -13,6 +13,7 @@ class Link < ApplicationRecord
   def self.is_hot?(url)
     link = find_by(URL: url)
     return 'Top Link!' if hot.first == link
-    return 'Hot Link!' if hot.includes(link)
+    return 'Hot Link!' if hot.include?(link)
+
   end
 end
