@@ -1,5 +1,5 @@
 class HotReadsController < ApplicationController
   def index
-    @links
+    @links = Link.hot
   end
 end
